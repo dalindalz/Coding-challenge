@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.AbsListView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -29,12 +30,12 @@ class MainFragment : Fragment(R.layout.main_fragment){
             ViewModelProvider(this).get(ProductViewModel::class.java)
         }?: throw Exception("Invalid Activity")
 
-
         setupRecyclerView()
 
         viewModel.products.observe(viewLifecycleOwner, Observer { response ->
             when(response){
                 is Resource.Success ->{
+                    hideProgressBar()
                     response.data?.let { productResponse ->
                         calculate(productResponse)
                         val totalPages = 6
@@ -49,6 +50,7 @@ class MainFragment : Fragment(R.layout.main_fragment){
                     hideProgressBar()
                     response.message?.let { message ->
                         Log.e("MainFragment", "An error occured: $message")
+                        Toast.makeText(activity,"Network Failure",Toast.LENGTH_LONG).show()
                     }
                 }
                 is Resource.Loading ->{
@@ -72,7 +74,6 @@ class MainFragment : Fragment(R.layout.main_fragment){
 
         }
         productAdapter.differ.submitList(productResponse.objects.toList())
-        hideProgressBar()
 
     }
 
