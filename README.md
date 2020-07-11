@@ -2,14 +2,20 @@
 
 The app uses the following libraries / topics:
 
-Kotlin
+  * Kotlin
 
-Coroutines
+  * Coroutines
 
-Retrofit2
+  * Retrofit2
 
-ViewModels
+  * ViewModels
 
-Repository pattern
+  * Repository pattern
+
+  * Recycler View
+   
+  * Card view
+
+
 
 
