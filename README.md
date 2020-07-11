@@ -1,5 +1,12 @@
 # Coding-challenge
 
+
+#Solution
+
+The root directory has the apk which contains the solution
+
+The minimum sdk is 21 ( Android 5.0)
+
 The app uses the following libraries / topics:
 
   * Kotlin
@@ -15,6 +22,11 @@ The app uses the following libraries / topics:
   * Recycler View
    
   * Card view
+  
+  
+  
+
+
 
 
 
