@@ -1,0 +1,2 @@
+rootProject.name='kogan_challenge'
+include ':app'
