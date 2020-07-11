@@ -1,7 +1,7 @@
 # Coding-challenge
 
 
-#Solution
+
 
 The root directory has the apk which contains the solution
 
@@ -24,3 +24,4 @@ The app uses the following libraries / topics:
   * Card view
   
   
+# Note : The list displayed consist of all the products but the cubic weight is displayed only for category "Air conditioners" as per the challenge
