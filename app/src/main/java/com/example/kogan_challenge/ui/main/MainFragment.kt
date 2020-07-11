@@ -35,7 +35,6 @@ class MainFragment : Fragment(R.layout.main_fragment){
         viewModel.products.observe(viewLifecycleOwner, Observer { response ->
             when(response){
                 is Resource.Success ->{
-                    hideProgressBar()
                     response.data?.let { productResponse ->
                         calculate(productResponse)
                         val totalPages = 6
@@ -74,6 +73,7 @@ class MainFragment : Fragment(R.layout.main_fragment){
 
         }
         productAdapter.differ.submitList(productResponse.objects.toList())
+        hideProgressBar()
 
     }
 
